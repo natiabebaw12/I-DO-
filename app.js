@@ -48,8 +48,13 @@ function deleteCheck(e){
     //delete item
     if(item.classList[0] === 'trash-btn'){
         const todo =item.parentElement;
+        //Animation
         todo.classList.add('fall');
-        todo.remove();
+        //event
+        todo.addEventListener('transitionend',function(){
+            todo.remove();
+        });
+        
     } 
 
     if(item.classList[0] === 'complet-btn'){
